@@ -1,12 +1,12 @@
 const {expect} = require('chai');
 
-const {setLongTimeout, setLongInterval, clearLongTimeout} = require('../src')(5000);
+const {setLongTimeout, setLongInterval, clearLongTimeout} = require('../src')(1000);
 
 describe('setLongTimeout', function () {
-  this.timeout(30000);
+  this.timeout(10000);
 
   it('calls function after x seconds', done => {
-    setLongTimeout(() => done(), 19000);
+    setLongTimeout(() => done(), 2500);
   });
 
   it('passes through variables', done => {
@@ -14,24 +14,24 @@ describe('setLongTimeout', function () {
       expect(var1).to.equal(1);
       expect(var2).to.equal(2);
       done();
-    }, 9000, 1, 2);
+    }, 2500, 1, 2);
   });
 
   it('clears timeout early', done => {
     const id = setLongTimeout(() => {
       done('should not happen');
-    }, 9000);
+    }, 2500);
 
     setTimeout(() => {
       const cleared = clearLongTimeout(id);
       expect(cleared).to.equal(true);
       setTimeout(() => done(), 2000);
-    }, 8000);
+    }, 1500);
   });
 });
 
 describe('setLongInterval', function () {
-  this.timeout(60000);
+  this.timeout(15000);
 
   it('calls function every x seconds', done => {
     let count = 0;
@@ -41,7 +41,7 @@ describe('setLongInterval', function () {
         clearLongTimeout(id);
         done();
       }
-    }, 19000);
+    }, 2500);
   });
 
   it('clears timeout early', done => {
@@ -54,8 +54,8 @@ describe('setLongInterval', function () {
         setTimeout(() => {
           expect(count).to.equal(2);
           done();
-        }, 9000);
+        }, 6000);
       }
-    }, 6000);
+    }, 2500);
   });
 });
