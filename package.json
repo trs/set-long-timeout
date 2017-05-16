@@ -1,6 +1,6 @@
 {
   "name": "set-long-timeout",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "setTimeout and setInterval above 2147483647ms delay",
   "license": "MIT",
   "main": "src/index.js",
