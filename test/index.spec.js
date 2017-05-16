@@ -31,7 +31,7 @@ describe('setLongTimeout', function () {
 });
 
 describe('setLongInterval', function () {
-  this.timeout(100000);
+  this.timeout(60000);
 
   it('calls function every x seconds', done => {
     let count = 0;

@@ -16,6 +16,7 @@
     "dev": "cross-env NODE_ENV=development npm run verify:watch",
     "prepush": "npm-run-all verify test:coverage --silent",
     "start": "npm run dev",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "npm run test:unit",
     "test:check-coverage": "cross-env NODE_ENV=test istanbul check-coverage reports/coverage/coverage.json --config config/testUnit/istanbul.js",
     "test:coverage": "npm-run-all test:unit:once test:check-coverage --silent",
@@ -50,7 +51,8 @@
     "istanbul": "0.4.5",
     "mocha": "3.2.0",
     "npm-run-all": "4.0.1",
-    "rimraf": "2.5.4"
+    "rimraf": "2.5.4",
+    "semantic-release": "^6.3.6"
   },
   "engines": {
     "node": ">=6.x",

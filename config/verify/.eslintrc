@@ -55,3 +55,4 @@ rules:
     - 2
     - allowModules:
       - chai
+      - semantic-release
