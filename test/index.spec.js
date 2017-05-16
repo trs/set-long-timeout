@@ -3,7 +3,7 @@ const {expect} = require('chai');
 const {setLongTimeout, setLongInterval, clearLongTimeout} = require('../src')(5000);
 
 describe('setLongTimeout', function () {
-  this.timeout(10000);
+  this.timeout(30000);
 
   it('calls function after x seconds', done => {
     setLongTimeout(() => done(), 19000);
